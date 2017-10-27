@@ -1,0 +1,47 @@
+
+<div class='container'>
+	<div class='row center'>
+		<img src="/images/bigburger.jpg" alt="big burger" height="300px">
+		<h1>Eat da Burger!</h1>
+		<p>Create burgers for everyone to eat! Click the <i class="material-icons">local_dining</i> icon near a burger to eat it.</p>
+	</div>
+	<hr>
+	<div class='row'>
+		<h4>Menu:</h4>
+		<div class='col s12 m6 center'>
+			<h5>Ready to eat</h5>
+		  {{#each burgers}}
+		    {{#unless devoured}}
+		      {{> burgers/burger-button}}
+		    {{/unless}}
+		  {{/each}}
+		</div>
+		<div class='col s12 m6 center'>
+			<h5>Already eaten</h5>
+			<ul>
+			  {{#each burgers}}
+			    {{#if devoured}}
+			      {{> burgers/burger-button}}
+			    {{/if}}
+			  {{/each}}
+			</ul>
+		</div>
+	</div>
+	<hr>
+	<div class='row'>
+		<h4>Add burgers to the menu:</h4>
+		<form class="newBurger col s12">
+	    	<div class="row">
+		        <div class="input-field col s12">
+	          		<input id="burger-name" type="text" class="validate" maxlength="42">
+					<label for="burger-name">Create a new burger:</label>
+	       	  	</div>
+	      	</div>
+			<div class="row center">
+				<button class="btn waves-effect waves-light grey" type="submit">Submit
+					<i class="material-icons right">send</i>
+			   	</button>
+			</div>
+	    </form>
+	</div>
+</div>

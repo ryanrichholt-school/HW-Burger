@@ -1,0 +1,14 @@
+{{#if devoured}}
+	<div class="chip grey white-text">
+		<img src="/images/burger.jpg" alt="Contact Person">
+		{{burger_name}}	    
+		<i class="material-icons">not_interested</i>
+	</div>
+
+{{else}}
+	<div class="chip blue white-text">
+		<img src="/images/burger.jpg" alt="Contact Person">
+		{{burger_name}}	    
+		<i class="devour-burger material-icons" style="cursor: pointer;" data-id="{{id}}" alt="DEVOUR!">local_dining</i>
+	</div>
+{{/if}}
